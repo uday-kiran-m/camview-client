@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CamView Installation</title>
+    <style></style>
+    <link rel="stylesheet" href="{% static 'statics/css/install.css' %}">
+    
+</head>
+
+<body>
+    <header>
+        <h1>CamView</h1>
+    </header>
+    <main>
+        <h2 id="heading">Installation</h2>
+        <p id="intro">Welcome to installation wizard, please fill up the necessary details</p>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div id="div1" class="installer">
+                <p><label for="username">Username</label>
+                <input name="username" id="username" type="text" onkeyup="check()" placeholder="username"></p>
+                <p><label for="email">Email</label>
+                    <input name="email" id="email" type="email" onkeyup="check()" placeholder="email"></p>
+                <p><label for="passwd">Password</label>
+                <input name="password1" id="passwd" type="password" onkeyup="check()" placeholder="password"></p>
+                <p><label for="cpasswd">Confirm Password</label>
+                <input name="password2" id="cpasswd" type="password" onkeyup="check()" placeholder="confirm password"></p>
+                <p><span></span><span id="error"></span></p>
+            </div>
+            <div class="installer">
+                Ready to install Program ?
+            </div>
+            <div class="buttondiv">
+                <div id="backdiv">
+                    <button type="button" onclick="backbutton()" id="back" class="buttons">Back</button>
+                </div>
+                <div id="nextdiv">
+                    <button type="button" onclick="nextbutton()"  id="next" class="buttons">Next</button>
+                    <button type="submit"  id="submit" class="buttons">Complete</button>
+                </div>
+            </div>
+        </form>
+    </main>
+
+</body>
+<script src="{%static 'statics/js/install.js' %}"></script>
+</html>

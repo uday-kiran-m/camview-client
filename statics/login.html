@@ -1,0 +1,28 @@
+{% load static %}
+<html>
+
+<head>
+    <title>
+        login
+    </title>
+    <link rel="stylesheet" href="{%static 'statics/css/login.css'%}">
+</head>
+
+<body>
+    <header>
+        <h2>Camview</h2>
+    </header>
+    <main>
+        <div class="login">
+            <H2>Login</H2>
+            <form action="/login/" method="POST">
+                {% csrf_token %}
+                {{ form.as_p}}
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

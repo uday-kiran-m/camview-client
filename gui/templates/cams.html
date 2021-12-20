@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% block heading %}
+Cams
+{% endblock heading %}
+
+{% block dashcontent %}
+{% for i in cams%}
+<div class="content">
+    {{i.camname}}
+</div>
+{%endfor%}
+<div class="content">
+addmore
+</div>
+{% endblock dashcontent %}

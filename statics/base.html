@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+     <!--<meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'statics/css/base.css'%}">
+    <!-- <link rel="icon" href="{% static 'statics/img/favicon.svg' %}"> -->
+
+    <title>Camview</title>
+</head>
+
+<body>
+    <header id="header">
+        <!-- <img src="img/logonew.png" alt="logo" id="logo"> -->
+        <h2 id="logow">CamView</h2>
+        <nav class="nav" id="nav">
+            <a href= {%url 'index' %} >Home</a>
+            <a href= {%url 'logout' %}>Cams</a>
+            <a href=#>About</a>
+            <a href=#>Logout</a>
+        </nav>
+    </header>
+    <main class="main" id="main">
+        <div id="heading">
+            <a id="nav-icon" onclick="sidebar()"><span id="menu-icon">&#9776;</span></a>
+            <h2>
+                {% block heading %}
+                    heading
+                {% endblock heading %}
+            </h2>
+        </div>
+        <div id="content-grid">
+            {% block dashcontent %}
+            <div class="content">Content 1</div>
+            <div class="content">Content 2</div>
+            <div class="content">Content 3</div>
+            <div class="content">Content 4</div>
+            {% endblock dashcontent %}
+            
+        </div>
+    </main>
+    <footer id="footer">
+        <p>&copy;Project by Uday</p>
+    </footer>
+</body>
+<script type="text/javascript" src="{% static 'statics/js/base.js' %}"></script>
+
+</html>
